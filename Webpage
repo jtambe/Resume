@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="resume">
+  <head>
+  	<meta charset="UTF-8">
+    <title>Jayesh Tambe Resume</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  
+  <script>
+    
+  </script>
+
+  <script>
+
+    $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();   
+    });
+
+  	var app = angular.module("resume",[]);
+  	app.controller("resumectrl", function($scope){
+
+  		$scope.jayeshImage = false;
+  		$scope.bachelors = false;
+  		$scope.masters = false;
+  		$scope.showJayesh = function(){    			
+  			$scope.jayeshImage = true;    			
+  		};
+  		$scope.hideJayesh = function(){
+  			$scope.jayeshImage = false;    				
+  		};
+  		$scope.toggleBachelors = function(){
+  			if($scope.bachelors == false){
+  				$scope.bachelors = true;
+  			}
+  			else{
+  				$scope.bachelors = false;
+  			}
+  		};
+  		$scope.toggleMasters = function(){
+  			if($scope.masters == false){
+  				$scope.masters = true;
+  			}
+  			else{
+  				$scope.masters = false;
+  			}
+  		};
+  	});
+  </script>
+  </head>
+
+  <body ng-controller="resumectrl">
+  	<div>
+  	<marquee>
+  		<h4 ng-mouseleave="hideJayesh()" ng-mouseenter="showJayesh()"> 
+  		<b>Jayesh Madhav Tambe </b></h4>
+  		<div ng-show="jayeshImage"><img class="img-responsive" src="picture.jpg" border="0"/></div>
+  	</marquee>
+  	</div>
+  	
+  	<div>
+  		<table class="table">
+  			<tr class="success" >
+  				<td><b>Address:</b> 522 Nord Avenue, Apartment 16, Chico, California 95926</td>
+  				<td><b>Email:</b> tambe_jayesh@hotmail.com</td>
+  			</tr>
+  			<tr class="info">
+  				<td><b>Birth Date:</b> 15 February 1988</td>
+  				<td><b>Contact Number:</b> +1(530)591-9019</td>
+  			</tr>
+  			<tr class="active">
+  				<td><b>LinkedIn:</b> <a href="http://www.linkedin.com/in/jayeshtambe" target="_blank"> www.linkedin.com/in/jayeshtambe</a></td>
+  				<td><b>GitHub:</b> <a href="http://www.github.com/jtambe" target="_blank"> www.github.com/jtambe</a>
+  				</td>
+  			</tr>
+  		</table>
+  	</div>
+  	<div class="text-center" style="background-color:rgb(241,232,198)"><b>Education</b></div>  	
+  	<div>
+  		<table class="table table-condensed">  			
+  			<tr class="info">
+  				<td><button class="btn btn-sm btn-success" ng-click="toggleMasters()"><b>View Masters</b></button>
+  				<p ng-show="masters">Currently pursuing a Masters in Computer Science at California State University - Chico </br>
+  				GPA : 4.0 </br>
+  				Expected graduation in May 2017</p>  			
+  				</td>
+  				<td><button class="btn btn-sm btn-success" ng-click="toggleBachelors()"><b>View Bachelors</b></button>
+  				<p ng-show="bachelors">Completed a Bachelors in Computer Engineering from Mumbai University
+  				</br>GPA: 3.2
+  				</br>Graduated in August 2009</p>
+  				</td>
+  			</tr>
+  		</table>
+  	</div>
+  	<div class="text-center" style="background-color:rgb(241,232,198)" ><b>Skills</b></div>  	
+  	<div>
+      <table>
+        <tr>
+          <b><p class="text-center" style="background-color:rgb(240,240,240)">C, C++, C#, Java, Python, ASP.net MVC, Angular.js, Bootstrap.js, Oracle 11g, SQL, Android</p></b>
+        </tr>
+      </table>
+  	</div>    
+    <div class="text-center" style="background-color:rgb(241,232,198)" ><b>Work Experience Summary</b></div>
+    <div>
+    <table>
+      <tr>
+        <p class="text-center" style="background-color:rgb(240,240,240)">Over 5 years of industry experience in software development, unit testing, UAT, documentation, installation at client site, user training, support and maintenance involving complete software development life cycle</p>
+      </tr>
+    </table>      
+    </div>
+    <!-- <br/> -->
+    <div class="text-center"  style="background-color:rgb(219,255,200)" >
+    <a data-toggle="collapse" href="#collapseChicoState"><b>California State University, Chico - Courses (August 2015 - Present day)</b></a>
+    </div>
+    <!-- <div id="collapseChicoState" class="collapse in"> -->
+    <div id="collapseChicoState" class="collapse">
+      <table class="table table-hover">
+        <thead>
+          <tr class="success">
+            <th>Course Code</th>
+            <th>Course Name/Detail</th>
+            <th>Course Grade</th>
+          </tr>  
+        </thead>
+        <tr>
+          <td>CSCI 620</td>
+          <td>Computer Architecture</td>
+          <td>A</td>
+        </tr>
+        <tr>
+          <td>CSCI 570</td>
+          <td>Advanced Database Management Systems using Oracle 11g</td>
+          <td>A</td>
+        </tr>
+        <tr>
+          <td>CSCI 546</td>
+          <td>Advanced Network Management using windows machines in network</td>
+          <td>A</td>
+        </tr>
+        <tr>
+          <td>CSCI 211</td>
+          <td>Programming & Algorithms II using C++ in Linux Ubuntu</td>
+          <td>A</td>
+        </tr>
+        <tr>
+          <td>CSCI 311</td>
+          <td>Algorithms and Data Structures using C++ in Linux Ubuntu</td>
+          <td>A-</td>
+        </tr>
+        <tr>
+          <td>CSCI 650</td>
+          <td>Design and Analysis of Algorithms using C++ in Linux Ubuntu</td>
+          <td>A</td>
+        </tr>
+        <tr>
+          <td>CINS 548</td>
+          <td>Advanced Computer Security using Linux Kali</td>
+          <td>A</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="text-center" style="background-color:rgb(241,232,198)"><a href="#workDetails" data-toggle="collapse"><b>Employers, Projects & Responsibilities</b></a></div>
+    <div id="workDetails" class="collapse">
+      
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title text-center">
+              <div><a href="http://www.accenture.com" target="_blank" >Accenture</a> (Dec 2013 - Jul 2015) - <a href="#" data-toggle="popover" data-placement="top" data-content="Software Engineering Senior Analyst">Designation</a></div>
+              <div><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Projects</a></div>
+            </h4>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse">
+            <div class="panel-body">
+            <b>MyCertification:</b> Analysis of data to be migrated from one system to another. Development of SQL procedures to include in SSIS packages. Coordinating multiple teams for delivery and deployment. Code review for teammates’ code. Development of web pages using ASP.net, C# and Angular.js
+            </div>
+          </div>
+        </div>        
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title text-center">
+              <div><a href="http://worldline.com" target="_blank">Atos Worldine</a> (Jul 2013 - Dec 2013) - <a href="#" data-toggle="popover" data-placement="top" data-content="Application Engineer">Designation</a></div>
+              <div><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Projects</a></div>
+            </h4>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body">
+            <b>Apply Automation:</b> Development of multithreaded windows service using C# to automate the application process for credit cards using Oracle as database.</div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title text-center">
+              <div><a href="http://www.godrejefacec.com" target="_blank">Godrej Efacec</a> (Nov 2012 - Jul 2013) - <a href="#" data-toggle="popover" data-placement="top" data-content="Software Engineer">Designation</a></div>
+              <div><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Projects</a></div>
+            </h4>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse">
+            <div class="panel-body">
+                <b>Warehouse Management System:</b> Configure & install the system by modifying PL-SQL stored procedures as required by customized needs of client’s warehouse. This position required me to do extensive face-to- face communication with client and user training before the system got commissioned.
+            </div>              
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title text-center">
+              <div><a href="http://www.aurionpro.com" target="_blank" >Aurionpro</a> (May 2010 - Nov 2012) - <a href="#" data-toggle="popover" data-placement="top" data-content="Software Engineer">Designation</a></div>
+              <div><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Projects</a></div>
+            </h4>
+          </div>
+          <div id="collapseFour" class="panel-collapse collapse">
+            <div class="panel-body">
+            <b>1) Nostro Reconciliation System: </b>Development of enhancements for Nostro accounts maintenance in windows desktop application using C# and PL-SQL, unit testing and documentation as per ISO standards.
+            <b>2) Check Referral System: </b>developing enhancement for web application using ASP.net, C# and SQL that generates alerts for maximum and minimum limit on checks used by customers.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center" style="background-color:rgb(219,255,200)">
+      <a href="#awards" data-toggle="collapse" ><b>Awards & Achievements</b></a>
+    </div>
+    <div id="awards" class="collapse in">
+      <table class="table table-hover">
+        <tr>
+          <div class="text-center">India’s Inspire ACE GEMs award in Accenture for successful delivery of migrating employee certificates from one system to another</div>
+        </tr>
+        <tr>
+          <div class="text-center">Successfully led my team to deliver the Nostro Reconciliation System application enhancement on time</div>
+        </tr>
+      </table>
+    </div>
+
+  	
+  </body>
+
+</html>    
